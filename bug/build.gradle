@@ -26,6 +26,10 @@ apply plugin: 'io.spring.dependency-management'
 group 'cn.gd.cz.hong'
 version '1.0-SNAPSHOT'
 
+tasks.withType(JavaCompile) {
+    options.encoding = "UTF-8"
+}
+
 repositories {
     // 使用国内的源
     maven { url 'https://maven.aliyun.com/repository/public' }
@@ -34,5 +38,6 @@ repositories {
 
 dependencies {
     compile 'org.springframework.boot:spring-boot-starter-web'
+    compile group: 'joda-time', name: 'joda-time', version: '2.10.9'
     testCompile 'org.springframework.boot:spring-boot-starter-test'
 }
